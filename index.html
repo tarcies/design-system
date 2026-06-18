@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Design System</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Syne:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <div class="header-title">
+                    <p class="system-label">DESIGN_SYSTEM V1.0</p>
+                    <h1>
+                        Portfolio<span>.</span>DS
+                    </h1>
+                    <div class="header-meta">
+                        <span>dark-first, accessible</span>
+                        <span>Syne + JetBrains Mono</span>
+                        <span>CSS custom properties</span>
+                    </div>
+                </div>
+                <div class="header-theme">
+                    <button class="theme-toggle" onclick="toggleTheme()" id="btnTheme">
+                        <span class="toggle-dot"></span>
+                        <span id="themeLabel">O</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 01 - Colour Palette -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">01</span>
+                    <h2 class="section-title">Color Palette</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="section-body">
+                    <!-- Background -->
+                    <div class="palette-row">
+                        <div class="palette-label">// BACKGROUND</div>
+                        <div class="palette-swatches" id="background-swatches">
+                            <!-- <div class="palette-swatch">
+                                <span class="palette-swatch-label">base</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">surface</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">elevated</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">subtle</span>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- Accent -->
+                    <div class="palette-row">
+                        <div class="palette-label">// ACCENT</div>
+                        <div class="palette-swatches" id="accent-swatches">
+                            <!-- <div class="palette-swatch">
+                                <span class="palette-swatch-label">900</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">800</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">600</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">500 - main</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">400</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">300</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">100</span>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- Semantic -->
+                    <div class="palette-row">
+                        <div class="palette-label">// SEMANTIC</div>
+                        <div class="palette-swatches" id="semantic-swatches">
+                            <!-- <div class="palette-swatch">
+                                <span class="palette-swatch-label">success</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">warning</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">error</span>
+                            </div>
+                            <div class="palette-swatch">
+                                <span class="palette-swatch-label">info</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 02 - Typography -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">02</span>
+                    <h2 class="section-title">Typography</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="section-body">
+
+                </div>
+            </section>
+            
+            <!-- 03 - Spacing Scale -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">03</span>
+                    <h2 class="section-title">Spacing</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="section-body">
+
+                </div>
+            </section>
+            
+            <!-- 04 - Components -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">04</span>
+                    <h2 class="section-title">Components</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="section-body">
+
+                </div>
+            </section>
+            
+            <!-- 05 - Radii & Elevation -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">05</span>
+                    <h2 class="section-title">Radii & Elevation</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="section-body">
+
+                </div>
+            </section>
+            
+            <!-- 06 - Motion & Easing -->
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-num">06</span>
+                    <h2 class="section-title">Motion & Easing</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="section-body">
+
+                </div>
+            </section>
+            
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>
