@@ -6,3 +6,5 @@ node_modules/
 .env
 *.log
 dist/
+
+portfolio_design_system.html
