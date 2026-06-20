@@ -1,45 +1,54 @@
 const root = document.documentElement;
+let isDark = true;
 
-const swatches = [
-    document.getElementById('background-swatches'), 
-    document.getElementById('accent-swatches'), 
-    document.getElementById('semantic-swatches')
-]
+function toggleTheme() {
+    isDark = !isDark;
+    console.log(isDark);
 
-const backgroundTokenArr = ['--bg-base', '--bg-surface', '--bg-elevated', '--bg-subtle'];
-const accentTokenArr = [
-    '--purple-900', '--purple-800', '--purple-600', '--purple-500', 
-    '--purple-400', '--purple-300', '--purple-100'
-];
-const semanticTokenArr = ['--success', '--warning', '--error', '--info'];
+    root.setAttribute('color-scheme', isDark ? '' : 'light');
+    document.getElementById('themeLabel').innerHTML = isDark ? 'O' : '|';
+}
 
-const tokenArrs = [backgroundTokenArr, accentTokenArr, semanticTokenArr];
-const rootStyles = window.getComputedStyle(root);
+// const swatches = [
+//     document.getElementById('background-swatches'), 
+//     document.getElementById('accent-swatches'), 
+//     document.getElementById('semantic-swatches')
+// ]
 
-swatches.forEach((swatchRow, rowID) => {
-    if (!swatchRow) return;
+// const backgroundTokenArr = ['--bg-base', '--bg-surface', '--bg-elevated', '--bg-subtle'];
+// const accentTokenArr = [
+//     '--purple-900', '--purple-800', '--purple-600', '--purple-500', 
+//     '--purple-400', '--purple-300', '--purple-100'
+// ];
+// const semanticTokenArr = ['--success', '--warning', '--error', '--info'];
 
-    let loadedTokenArr = tokenArrs[rowID];
+// const tokenArrs = [backgroundTokenArr, accentTokenArr, semanticTokenArr];
+// const rootStyles = window.getComputedStyle(root);
 
-    loadedTokenArr.forEach((colorToken, tokenID) => {
-        let swatch = document.createElement('div');
-        swatch.className = 'palette-swatch';
+// swatches.forEach((swatchRow, rowID) => {
+//     if (!swatchRow) return;
 
-        const colorValue = rootStyles.getPropertyValue(colorToken).trim();
-        swatch.style.backgroundColor = colorValue;
+//     let loadedTokenArr = tokenArrs[rowID];
 
-        const nameValue = colorToken.replace(/^--(bg-|purple-)?/, '');
+//     loadedTokenArr.forEach((colorToken, tokenID) => {
+//         let swatch = document.createElement('div');
+//         swatch.className = 'palette-swatch';
 
-        let labelSpan = document.createElement('span');
-        labelSpan.className = 'palette-swatch-label';
-        labelSpan.textContent = nameValue;
+//         const colorValue = rootStyles.getPropertyValue(colorToken).trim();
+//         swatch.style.backgroundColor = colorValue;
+
+//         const nameValue = colorToken.replace(/^--(bg-|purple-)?/, '');
+
+//         let labelSpan = document.createElement('span');
+//         labelSpan.className = 'palette-swatch-label';
+//         labelSpan.textContent = nameValue;
         
-        // don't judge me ._.
-        if(tokenID > 3 || rowID == 2) {
-            labelSpan.style.color = 'var(--gray-800)';
-        }
+//         // don't judge me ._.
+//         if(tokenID > 3 || rowID == 2) {
+//             labelSpan.style.color = 'var(--gray-800)';
+//         }
         
-        swatch.appendChild(labelSpan);
-        swatchRow.appendChild(swatch);
-    });
-});
+//         swatch.appendChild(labelSpan);
+//         swatchRow.appendChild(swatch);
+//     });
+// });
