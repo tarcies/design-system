@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html style="color-scheme: dark;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Syne:wght@400;500;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <!-- <script src="script.js" defer></script> -->
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -107,6 +107,54 @@
                 </div>
             </div>
           </div>
+
+          <!-- Token Table -->
+
+          <div class="token-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">token</th>
+                  <th scope="col">value</th>
+                  <th scope="col">preview</th>
+                  <th scope="col">usage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--bg-base</td>
+                  <td>#0c0c0f / #e7e5f1</td>
+                  <td><div class="token-bg-base"></div></td>
+                  <td>Page background</td>
+                </tr>
+                <tr>
+                  <td>--bg-surface</td>
+                  <td>#202027 / #d3d0e6</td>
+                  <td><div class="token-bg-surface"></div></td>
+                  <td>Cards, panels, components</td>
+                </tr>
+                <tr>
+                  <td>--accent</td>
+                  <td>#7c6af5 / #5c4de0</td>
+                  <td><div class="token-accent"></div></td>
+                  <td>CTAs, highlights</td>
+                </tr>
+                <tr>
+                  <td>--text-primary</td>
+                  <td>#d3d0e6 / #202027</td>
+                  <td><div class="token-text-primary"></div></td>
+                  <td>Headings, titles</td>
+                </tr>
+                <tr>
+                  <td>--text-secondary</td>
+                  <td>#9797b1 / #49495a</td>
+                  <td><div class="token-text-secondary"></div></td>
+                  <td>Descriptions, paragraphs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
         </div>
       </section>
 
@@ -123,27 +171,28 @@
                 <div class="typography-card" style="grid-column: 1 / 3;">
                     <span class="typography-label">display</span>
                     <span class="typography-properties">Syne 800 · 48px · -0.03em</span>
-                    <span class="typography-example" id="display">Hello, World_</span>
+                    <span class="typography-example display">Hello, World_</span>
                 </div>
                 <div class="typography-card">
                     <span class="typography-label">h1</span>
                     <span class="typography-properties">Syne 700 · 36px</span>
-                    <span class="typography-example" id="h1">Section Title</span>
+                    <span class="typography-example h1">Section Title</span>
                 </div>
                 <div class="typography-card">
                     <span class="typography-label">h2</span>
                     <span class="typography-properties">Syne 600 · 24px</span>
-                    <span class="typography-example" id="h2">Sub-heading</span>
+                    <span class="typography-example h2">Sub-heading</span>
                 </div>
                 <div class="typography-card">
                     <span class="typography-label">body</span>
                     <span class="typography-properties">JetBrains Mono 400 · 14px</span>
-                    <span class="typography-example" id="body">This is an example of text using typography intended for body of text</span>
+                    <span class="typography-example body">This is an example of text using typography intended for body of text</span>
                 </div>
                 <div class="typography-card">
                     <span class="typography-label">label</span>
                     <span class="typography-properties">JetBrains Mono 400 · 11px</span>
-                    <span class="typography-example" id="label">React · TypeScript · Node.js</span>
+                    <span class="typography-example label">React · TypeScript · Node.js</span>
+                    <!-- <span class="typography-example code">console.log("Hello, World!");</span> -->
                 </div>
             </div>
         </div>
