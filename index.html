@@ -20,13 +20,13 @@
           <p class="system-label">DESIGN_SYSTEM V1.0</p>
           <h1>Portfolio<span>.</span>DS</h1>
           <div class="header-meta">
-            <span>dark-first, accessible</span> //
-            <span>Syne + JetBrains Mono</span> //
+            <span>dark-first, accessible //</span>
+            <span>Syne + JetBrains Mono //</span>
             <span>CSS custom properties</span>
           </div>
         </div>
         <div class="header-theme">
-          <button class="theme-toggle" onclick="toggleTheme()" id="btnTheme">
+          <button class="btn theme-toggle" onclick="toggleTheme()" id="btnTheme">
             <span class="toggle-dot"></span>
             <span id="themeLabel">O</span>
           </button>
@@ -38,7 +38,7 @@
         <div class="section-header">
           <span class="section-num">01</span>
           <h2 class="section-title">Colour Palette</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
         <div class="section-body">
@@ -99,8 +99,8 @@
                 <div class="palette-swatch" style="background-color: var(--warning)">
                     <span class="palette-swatch-label">warning</span>
                 </div>
-                <div class="palette-swatch" style="background-color: var(--error)">
-                    <span class="palette-swatch-label">error</span>
+                <div class="palette-swatch" style="background-color: var(--danger)">
+                    <span class="palette-swatch-label">danger</span>
                 </div>
                 <div class="palette-swatch" style="background-color: var(--info)">
                     <span class="palette-swatch-label">info</span>
@@ -123,13 +123,13 @@
               <tbody>
                 <tr>
                   <td>--bg-base</td>
-                  <td>#0c0c0f / #e7e5f1</td>
+                  <td>#0c0c0f / #f6f5fc</td>
                   <td><div class="token-bg-base"></div></td>
                   <td>Page background</td>
                 </tr>
                 <tr>
                   <td>--bg-surface</td>
-                  <td>#202027 / #d3d0e6</td>
+                  <td>#202027 / #dcdae9</td>
                   <td><div class="token-bg-surface"></div></td>
                   <td>Cards, panels, components</td>
                 </tr>
@@ -141,13 +141,13 @@
                 </tr>
                 <tr>
                   <td>--text-primary</td>
-                  <td>#d3d0e6 / #202027</td>
+                  <td>#dcdae9 / #202027</td>
                   <td><div class="token-text-primary"></div></td>
                   <td>Headings, titles</td>
                 </tr>
                 <tr>
                   <td>--text-secondary</td>
-                  <td>#9797b1 / #49495a</td>
+                  <td>#a6a6bd / #49495a</td>
                   <td><div class="token-text-secondary"></div></td>
                   <td>Descriptions, paragraphs</td>
                 </tr>
@@ -163,7 +163,7 @@
         <div class="section-header">
           <span class="section-num">02</span>
           <h2 class="section-title">Typography</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
         <div class="section-body">
@@ -203,10 +203,63 @@
         <div class="section-header">
           <span class="section-num">03</span>
           <h2 class="section-title">Spacing</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
-        <div class="section-body"></div>
+        <div class="section-body">
+          <div class="spacings body">
+            <div class="spacing">
+              <span>--space-1</span>
+              <div class="spacing-bar" style="width: var(--space-1);"></div>
+              <span>4px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-2</span>
+              <div class="spacing-bar" style="width: var(--space-2);"></div>
+              <span>8px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-3</span>
+              <div class="spacing-bar" style="width: var(--space-3);"></div>
+              <span>12px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-4</span>
+              <div class="spacing-bar" style="width: var(--space-4);"></div>
+              <span>16px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-5</span>
+              <div class="spacing-bar" style="width: var(--space-5);"></div>
+              <span>20px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-6</span>
+              <div class="spacing-bar" style="width: var(--space-6);"></div>
+              <span>24px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-8</span>
+              <div class="spacing-bar" style="width: var(--space-8);"></div>
+              <span>32px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-10</span>
+              <div class="spacing-bar" style="width: var(--space-10);"></div>
+              <span>40px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-12</span>
+              <div class="spacing-bar" style="width: var(--space-12);"></div>
+              <span>48px</span>
+            </div>
+            <div class="spacing">
+              <span>--space-16</span>
+              <div class="spacing-bar" style="width: var(--space-16);"></div>
+              <span>64px</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 04 - Components -->
@@ -214,10 +267,13 @@
         <div class="section-header">
           <span class="section-num">04</span>
           <h2 class="section-title">Components</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
-        <div class="section-body"></div>
+        <div class="section-body">
+          <div class="components">
+          </div>
+        </div>
       </section>
 
       <!-- 05 - Radii & Elevation -->
@@ -225,7 +281,7 @@
         <div class="section-header">
           <span class="section-num">05</span>
           <h2 class="section-title">Radii & Elevation</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
         <div class="section-body"></div>
@@ -236,7 +292,7 @@
         <div class="section-header">
           <span class="section-num">06</span>
           <h2 class="section-title">Motion & Easing</h2>
-          <div class="section-line"></div>
+          <div class="divider"></div>
         </div>
 
         <div class="section-body"></div>
