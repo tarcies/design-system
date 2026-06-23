@@ -396,7 +396,7 @@ body {
 }
 
 .body {
-    line-height: 1;
+    line-height: 1.5;
     font-family: var(--font-mono);
     font-weight: 400;
     font-size: 14px;
@@ -638,6 +638,56 @@ body {
 
 .input-error-msg {
     color: var(--danger);
-    margin: var(--space-1) 0 0 var(--space-2);
+    margin-top: var(--space-1);
+    margin-left: var(--space-2);
 }
 
+.project-card {
+    display: grid;
+    grid-template: 1fr auto 1fr / 1fr auto;
+    background-color: var(--bg-elevated);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-16);
+    padding: var(--space-4) var(--space-6);
+    margin: var(--space-4) 0 var(--space-2);
+}
+
+.proj-title {
+    grid-area: 1 / 1 / 2 / span 1;
+}
+
+.proj-title p {
+    margin-bottom: var(--space-2);
+}
+
+/* reference common class or create a unique one? */
+.proj-status {
+    grid-area: 1 / 2 / 2 / span 1;
+    justify-self: end;
+    align-self: start;
+}
+
+.proj-desc {
+    grid-area: 2 / 1 / span 1 / -1;
+    align-self: center;
+    padding: var(--space-4) 0;
+}
+
+.proj-progress {
+    grid-area: 3 / 1 / span 1 / -1;
+    align-self: end;
+    font-size: 24px;
+}
+
+.proj-progress-bar {
+    height: 3px;
+    background-color: var(--border);
+    margin: var(--space-1) 0;
+}
+
+.proj-progress-bar .progress {
+    height: 4px;
+    width: 68%;
+    background-color: var(--accent);
+    z-index: 2;
+}
