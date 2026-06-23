@@ -443,6 +443,11 @@ body {
     border-radius: var(--radius-full);
 }
 
+/* Lines up the spacing bars */
+.spacing span:first-child {
+    min-width: 84px;
+}
+
 .spacing span:last-child {
     color: var(--text-secondary);
 }
@@ -452,7 +457,7 @@ body {
 
 .components {
     display: grid;
-    grid-template: 1fr 1.5fr / 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
     margin: var(--space-2);
 }
@@ -595,9 +600,10 @@ body {
     gap: var(--space-2);
 }
 
+/* Add when necessary
 .input-group:last-child {
     margin-bottom: 0;
-}
+} */
 
 .input-group label, .input-group input {
     display: block;
@@ -610,7 +616,6 @@ body {
 .input {
     outline: none;
     border: none;
-    min-height: 3.5em;
     padding: var(--space-2) var(--space-3);
     font-size: 12px;
     font-weight: 500;
@@ -635,3 +640,4 @@ body {
     color: var(--danger);
     margin: var(--space-1) 0 0 var(--space-2);
 }
+
