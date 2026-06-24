@@ -698,6 +698,9 @@ body {
     z-index: 2;
 }
 
+
+/* ------- Radii & Elevation ------- */
+
 .section-radii-elevation {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -758,4 +761,45 @@ body {
 }
 .elev-accent {
     box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+
+/* ------- Motion & Easing ------- */
+
+.motion-easing-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: var(--space-6) 0;
+    padding: 0 var(--space-2);
+    gap: var(--space-2);
+}
+
+.motion-item {
+    min-width: 16em;
+    padding: var(--space-4);
+    background-color: var(--bg-surface);
+    border: 2px solid var(--bg-subtle);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.motion-label {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.motion-desc {
+    text-transform: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.motion-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-4px);
 }
