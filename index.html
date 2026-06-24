@@ -147,7 +147,7 @@
                 </tr>
                 <tr>
                   <td>--text-secondary</td>
-                  <td>#a6a6bd / #49495a</td>
+                  <td>#c8c6d8 / #49495a</td>
                   <td><div class="token-text-secondary"></div></td>
                   <td>Descriptions, paragraphs</td>
                 </tr>
@@ -169,27 +169,27 @@
         <div class="section-body">
             <div class="typography-cards">
                 <div class="typography-card" style="grid-column: 1 / 3;">
-                    <span class="typography-label">display</span>
+                    <span class="badge badge-accent">display</span>
                     <span class="typography-properties">Syne 800 · 48px · -0.03em</span>
                     <span class="typography-example display">Hello, World_</span>
                 </div>
                 <div class="typography-card">
-                    <span class="typography-label">h1</span>
+                    <span class="badge badge-accent">h1</span>
                     <span class="typography-properties">Syne 700 · 36px</span>
                     <span class="typography-example h1">Section Title</span>
                 </div>
                 <div class="typography-card">
-                    <span class="typography-label">h2</span>
+                    <span class="badge badge-accent">h2</span>
                     <span class="typography-properties">Syne 600 · 24px</span>
                     <span class="typography-example h2">Sub-heading</span>
                 </div>
                 <div class="typography-card">
-                    <span class="typography-label">body</span>
+                    <span class="badge badge-accent">body</span>
                     <span class="typography-properties">JetBrains Mono 400 · 14px</span>
                     <span class="typography-example body">This is an example of text using typography intended for body of text</span>
                 </div>
                 <div class="typography-card">
-                    <span class="typography-label">label</span>
+                    <span class="badge badge-accent">label</span>
                     <span class="typography-properties">JetBrains Mono 400 · 11px</span>
                     <span class="typography-example label">React · TypeScript · Node.js</span>
                     <!-- <span class="typography-example code">console.log("Hello, World!");</span> -->
@@ -319,7 +319,7 @@
                 <div class="proj-status badge badge-warn">In Progress</div>
                 <span class="proj-desc body">A project that does X and Y. </span>
                 <div class="proj-progress">
-                  <span>68%</span>
+                  <span class="h2">68%</span>
                   <div class="proj-progress-bar">
                     <div class="progress"></div>
                   </div>
@@ -338,7 +338,55 @@
           <div class="divider"></div>
         </div>
 
-        <div class="section-body"></div>
+        <div class="section-body">
+          <div class="section-radii-elevation">
+            <div>
+              <span class="label">border radius</span>
+              <div class="radius-row">
+                <div class="radius-item">
+                  <div class="radius-box" style="border-radius: none"></div>
+                  <p class="radius-label label">
+                    none
+                    <br>
+                    0px
+                  </p>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-box" style="border-radius: var(--radius-sm)"></div>
+                  <p class="radius-label label">
+                    sm
+                    <br>
+                    6px
+                  </p>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-box" style="border-radius: var(--radius-md)"></div>
+                  <p class="radius-label label">
+                    md
+                    <br>
+                    10px
+                  </p>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-box" style="border-radius: var(--radius-lg)"></div>
+                  <p class="radius-label label">
+                    lg
+                    <br>
+                    16px
+                  </p>
+                </div>
+                <div class="radius-item">
+                  <div class="radius-box" style="border-radius: var(--radius-full)"></div>
+                  <p class="radius-label label">
+                    full
+                    <br>
+                    9999px
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 06 - Motion & Easing -->
