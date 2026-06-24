@@ -8,3 +8,9 @@ node_modules/
 dist/
 
 portfolio_design_system.html
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
