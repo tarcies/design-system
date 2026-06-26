@@ -11,7 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Syne:wght@400;500;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="highlight/styles/tokyo-night-dark.css" id="codeTheme">
+    <script src="highlight/highlight.js"></script>
   </head>
   <body>
     <div class="page">
@@ -168,10 +170,10 @@
 
         <div class="section-body">
             <div class="typography-cards">
-                <div class="typography-card" style="grid-column: 1 / 3;">
+                <div class="typography-card" style="grid-column: 1 / -1;">
                     <span class="badge badge-accent">display</span>
                     <span class="typography-properties">Syne 800 · 48px · -0.03em</span>
-                    <span class="typography-example display">Hello, World_</span>
+                    <span class="typography-example display">Hello, World</span>
                 </div>
                 <div class="typography-card">
                     <span class="badge badge-accent">h1</span>
@@ -193,6 +195,27 @@
                     <span class="typography-properties">JetBrains Mono 400 · 11px</span>
                     <span class="typography-example label">React · TypeScript · Node.js</span>
                     <!-- <span class="typography-example code">console.log("Hello, World!");</span> -->
+                </div>
+                <div class="typography-card" style="grid-column: 1 / -1;">
+                    <span class="badge badge-accent">code</span>
+                    <span class="typography-properties">Tokyo Night · Language JavaScript</span>
+                    <div style="grid-column: 1 / -1;">
+                      <span class="code-file-name">script.js</span>
+                      <pre>
+                        <code class="code language-javascript">
+const root = document.documentElement;
+let isDark = true;
+
+function toggleTheme() {
+    isDark = !isDark;
+    console.log(isDark);
+
+    root.setAttribute('color-scheme', isDark ? '' : 'light');
+    document.getElementById('themeLabel').innerHTML = isDark ? 'O' : '|';
+}
+                        </code>
+                      </pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -432,21 +455,21 @@
           <div class="divider"></div>
         </div>
 
-        <div class="section-body">
+        <div class="section-body section-motion-easing">
           <div class="motion-easing-row">
-            <div class="motion-item" style="transition: 0.15s ease;">
+            <div class="motion-item motion-up easing-fast">
               <p class="motion-label h2">fast - 150ms</p>
               <p class="motion-desc label">Hover, badge changes</p>
             </div>
-            <div class="motion-item" style="transition: 0.25s ease;">
+            <div class="motion-item motion-up easing-base">
               <p class="motion-label h2">base - 250ms</p>
               <p class="motion-desc label">Button interactions</p>
             </div>
-            <div class="motion-item" style="transition: 0.4s ease-out;">
+            <div class="motion-item motion-up easing-smooth">
               <p class="motion-label h2">smooth - 400ms</p>
               <p class="motion-desc label">Panel open/close</p>
             </div>
-            <div class="motion-item" style="transition: 0.6s cubic-bezier(0.16, 1, 0.7, 1);">
+            <div class="motion-item motion-up easing-enter">
               <p class="motion-label h2">enter - 600ms</p>
               <p class="motion-desc label">Page/section reveal</p>
             </div>
@@ -459,5 +482,7 @@
 
       <footer></footer>
     </div>
+    <script src="script.js"></script>
+    <script>hljs.highlightAll();</script>
   </body>
 </html>

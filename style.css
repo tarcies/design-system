@@ -337,9 +337,9 @@ body {
 .typography-cards {
     display: grid;
     width: 100%;
-    height: 450px;
+    min-height: 52em;
     gap: 16px;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
 }
 
 .typography-card {
@@ -350,6 +350,7 @@ body {
     border-radius: var(--radius-lg);
     overflow: hidden;
     padding: var(--space-4) var(--space-6);
+    row-gap: var(--space-4);
 }
 
 .typography-card span {}
@@ -417,15 +418,21 @@ body {
     color: var(--text-muted);
 }
 
-.code {
+.code-file-name {
+    position: relative;
+    bottom: -16px;
+    left: var(--space-2);
+    line-height: 1;
     font-family: var(--font-mono);
     font-weight: 400;
-    font-size: 13px;
-    color: var(--accent);
-    background-color: var(--bg-subtle);
-    padding: var(--space-1) var(--space-2);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.code {
+    border: 2px solid var(--bg-elevated);
     border-radius: var(--radius-md);
-    width: 100%;
 }
 
 
@@ -766,19 +773,22 @@ body {
 
 /* ------- Motion & Easing ------- */
 
+.section-motion-easing {
+    padding: 0 var(--space-2);
+}
+
 .motion-easing-row {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: var(--space-6) 0;
-    padding: 0 var(--space-2);
     gap: var(--space-2);
 }
 
 .motion-item {
-    min-width: 16em;
+    flex: 1;
     padding: var(--space-4);
     background-color: var(--bg-surface);
     border: 2px solid var(--bg-subtle);
@@ -798,18 +808,45 @@ body {
     line-height: 1.5;
 }
 
-.motion-item:hover {
+.motion-up:hover, .motion-down:hover {
     border-color: var(--accent);
     color: var(--accent);
+}
+
+.motion-up:hover {
     transform: translateY(-4px);
 }
+
+.motion-down:hover {
+    transform: translateY(4px);
+}
+
+.easing-fast {
+    transition: 0.15s ease;
+}
+
+.easing-base {
+    transition: 0.25s ease;
+}
+
+.easing-smooth {
+    transition: 0.4s ease-out;
+}
+
+.easing-enter {
+    transition: 0.6s cubic-bezier(0.16, 1, 0.7, 1);
+}
+
+
 
 /* TODO: Add tokens for easing */
 
 .motion-easing-tokens {
+    display: flex;
     background-color: var(--bg-surface);
     border: 2px solid var(--bg-subtle);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     width: 100%;
     height: 8em;
+    padding: 0 var(--space-2);
 }
