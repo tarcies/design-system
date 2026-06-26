@@ -436,7 +436,7 @@ function toggleTheme() {
                   </p>
                 </div>
                 <div class="elev-item">
-                  <div class="elev-box elev-accent"></div>
+                  <div class="elev-box elev-glow"></div>
                   <p class="elev-label label">
                     glow
                   </p>
@@ -461,7 +461,7 @@ function toggleTheme() {
               <p class="motion-label h2">fast - 150ms</p>
               <p class="motion-desc label">Hover, badge changes</p>
             </div>
-            <div class="motion-item motion-up easing-base">
+            <div class="motion-item motion-down easing-base">
               <p class="motion-label h2">base - 250ms</p>
               <p class="motion-desc label">Button interactions</p>
             </div>
@@ -469,13 +469,42 @@ function toggleTheme() {
               <p class="motion-label h2">smooth - 400ms</p>
               <p class="motion-desc label">Panel open/close</p>
             </div>
-            <div class="motion-item motion-up easing-enter">
+            <div class="motion-item motion-down easing-enter">
               <p class="motion-label h2">enter - 600ms</p>
               <p class="motion-desc label">Page/section reveal</p>
             </div>
           </div>
           <div class="motion-easing-tokens">
-            
+            <div class="motion-token-row">
+              <div class="motion-token-item">
+                <span class="motion-token-name">.motion-up</span>
+                <span class="motion-token-value">→ translateY(-4px);</span>
+              </div>
+              <div class="motion-token-item">
+                <span class="motion-token-name">.motion-down</span>
+                <span class="motion-token-value">→ translateY(4px);</span>
+              </div>
+            </div>
+            <div class="motion-token-row">
+              <div class="motion-token-item">
+                <span class="motion-token-name">.easing-fast</span>
+                <span class="motion-token-value">→ 0.15s ease</span>
+              </div>
+              <div class="motion-token-item">
+                <span class="motion-token-name">.easing-base</span>
+                <span class="motion-token-value">→ 0.25s ease</span>
+              </div>
+            </div>
+            <div class="motion-token-row">
+              <div class="motion-token-item">
+                <span class="motion-token-name">.easing-smooth</span>
+                <span class="motion-token-value">→ 0.4s ease-out</span>
+              </div>
+              <div class="motion-token-item">
+                <span class="motion-token-name">.easing-enter</span>
+                <span class="motion-token-value">→ 0.6s cubic-bezier(0.16, 1, 0.7, 1)</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

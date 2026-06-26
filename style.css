@@ -766,7 +766,7 @@ body {
 .elev-lg {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
-.elev-accent {
+.elev-glow {
     box-shadow: 0 4px 20px var(--accent-glow);
 }
 
@@ -843,10 +843,30 @@ body {
 
 .motion-easing-tokens {
     display: flex;
+    flex-direction: column;
     background-color: var(--bg-surface);
     border: 2px solid var(--bg-subtle);
     border-radius: var(--radius-md);
     width: 100%;
-    height: 8em;
-    padding: 0 var(--space-2);
+    padding: var(--space-2);
+}
+
+.motion-token-row {
+    display: flex;
+    width: 100%;
+    padding: var(--space-2) var(--space-4);
+}
+
+.motion-token-item {
+    flex: 1;
+}
+
+.motion-token-name {
+    display: inline-block;
+    color: var(--accent);
+    width: 120px;
+}
+
+.motion-token-value {
+    color: var(--text-muted);
 }
