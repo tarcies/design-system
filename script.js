@@ -1,13 +1,30 @@
 const root = document.documentElement;
 let isDark = true;
 
+const darkTheme = 'highlight/styles/tokyo-night-dark.css';
+const lightTheme = 'highlight/styles/tokyo-night-light.css';
+
 function toggleTheme() {
     isDark = !isDark;
     console.log(isDark);
 
     root.setAttribute('color-scheme', isDark ? '' : 'light');
     document.getElementById('themeLabel').innerHTML = isDark ? 'O' : '|';
+
+    toggleCodeTheme();
 }
+
+// TODO: Adjust swatch label color to contrast with background
+
+
+
+
+// Switch code block theme between dark/light
+function toggleCodeTheme() {
+    document.getElementById('codeTheme').href = isDark ? darkTheme : lightTheme;
+}
+
+
 
 // const swatches = [
 //     document.getElementById('background-swatches'), 
