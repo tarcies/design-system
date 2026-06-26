@@ -28,9 +28,10 @@
           </div>
         </div>
         <div class="header-theme">
-          <button class="btn theme-toggle" onclick="toggleTheme()" id="btnTheme">
-            <span class="toggle-dot"></span>
-            <span id="themeLabel">O</span>
+          <button class="btn theme-toggle" onclick="toggleTheme()">
+            <div id="themeToggleIcon">
+              <i data-lucide="sun"></i>
+            </div>
           </button>
         </div>
       </header>
@@ -298,9 +299,9 @@ function toggleTheme() {
             <div class="component-card component-btn">
               <span class="label">buttons</span>
               <div class="btn-row">
-                <button class="btn btn-primary">View Work</button>
-                <button class="btn btn-ghost">About</button>
-                <button class="btn btn-outline">Contact</button>
+                <button class="btn btn-primary motion-up-hover motion-down-active easing-base">View Work</button>
+                <button class="btn btn-ghost motion-up-hover motion-down-active easing-base">About</button>
+                <button class="btn btn-outline motion-up-hover motion-down-active easing-base">Contact</button>
               </div>
               <div class="divider"></div>
               <div class="btn-row">
@@ -334,7 +335,7 @@ function toggleTheme() {
             </div>
             <div class="component-card component-projects">
               <span class="label">project card</span>
-              <div class="project-card">
+              <div class="project-card easing-base">
                 <div class="proj-title">
                   <p class="proj-heading h2">Project DS</p>
                   <p class="proj-label label">Next.js · TypeScript</p>
@@ -457,19 +458,19 @@ function toggleTheme() {
 
         <div class="section-body section-motion-easing">
           <div class="motion-easing-row">
-            <div class="motion-item motion-up easing-fast">
+            <div class="motion-item motion-up-hover easing-fast">
               <p class="motion-label h2">fast - 150ms</p>
               <p class="motion-desc label">Hover, badge changes</p>
             </div>
-            <div class="motion-item motion-down easing-base">
+            <div class="motion-item motion-down-hover easing-base">
               <p class="motion-label h2">base - 250ms</p>
               <p class="motion-desc label">Button interactions</p>
             </div>
-            <div class="motion-item motion-up easing-smooth">
+            <div class="motion-item motion-up-hover easing-smooth">
               <p class="motion-label h2">smooth - 400ms</p>
               <p class="motion-desc label">Panel open/close</p>
             </div>
-            <div class="motion-item motion-down easing-enter">
+            <div class="motion-item motion-down-hover easing-enter">
               <p class="motion-label h2">enter - 600ms</p>
               <p class="motion-desc label">Page/section reveal</p>
             </div>
@@ -511,6 +512,12 @@ function toggleTheme() {
 
       <footer></footer>
     </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
     <script src="script.js"></script>
     <script>hljs.highlightAll();</script>
   </body>
