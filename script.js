@@ -6,23 +6,32 @@ const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
 function toggleTheme() {
     isDark = !isDark;
-    console.log(isDark);
 
     root.setAttribute('color-scheme', isDark ? '' : 'light');
-    document.getElementById('themeLabel').innerHTML = isDark ? 'O' : '|';
 
+    toggleThemeIcon();
     toggleCodeTheme();
 }
 
-// TODO: Adjust swatch label color to contrast with background
+// Removes and loads the icon for the theme toggle button
+function toggleThemeIcon() {
+    const toggleIcon = document.getElementById('themeToggleIcon');
+    toggleIcon.innerHTML = null;
 
+    const newIcon = document.createElement('i');
+    newIcon.setAttribute('data-lucide', (isDark ? "sun" : "moon"))
 
-
+    toggleIcon.appendChild(newIcon);
+    lucide.createIcons();
+}
 
 // Switch code block theme between dark/light
 function toggleCodeTheme() {
     document.getElementById('codeTheme').href = isDark ? darkTheme : lightTheme;
 }
+
+
+// TODO: Adjust swatch label color to contrast with background
 
 
 
