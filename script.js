@@ -21,15 +21,19 @@ function toggleThemeIcon() {
     const newIcon = document.createElement('i');
     newIcon.setAttribute('data-lucide', (isDark ? "sun" : "moon"))
 
+
     toggleIcon.appendChild(newIcon);
     lucide.createIcons();
+
+    document.querySelectorAll('code').forEach (element => {
+        element.style.backgroundColor = isDark ? '' : 'var(--bg-base)';
+    });
 }
 
 // Switch code block theme between dark/light
 function toggleCodeTheme() {
     document.getElementById('codeTheme').href = isDark ? darkTheme : lightTheme;
 }
-
 
 // TODO: Adjust swatch label color to contrast with background
 
