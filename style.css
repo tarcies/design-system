@@ -165,6 +165,13 @@ body {
     background-color: var(--border);
 }
 
+.card {
+    overflow: hidden;
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--bg-surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+}
 
 /* ------- Header ------- */
 
@@ -346,11 +353,6 @@ body {
 .typography-card {
     display: grid;
     grid-template: auto 2fr / auto 3fr;
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    padding: var(--space-4) var(--space-6);
     row-gap: var(--space-4);
 }
 
@@ -473,14 +475,6 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-4);
     margin: var(--space-2);
-}
-
-.component-card {
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    padding: var(--space-4) var(--space-6);
 }
 
 .btn-row {
@@ -657,10 +651,6 @@ body {
 .project-card {
     display: grid;
     grid-template: 1fr auto 1fr / 1fr auto;
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4) var(--space-6);
     margin: var(--space-4) 0 var(--space-2);
     cursor: pointer;
 }
@@ -790,9 +780,7 @@ body {
 .motion-item {
     flex: 1;
     padding: var(--space-4);
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-lg);
+    border: 2px solid var(--bg-subtle);
     cursor: pointer;
 }
 
@@ -848,9 +836,8 @@ body {
 .motion-easing-tokens {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-surface);
-    border: 2px solid var(--border);
-    border-radius: var(--radius-lg);
+    border: 2px solid var(--bg-subtle);
+    width: 100%;
     padding: var(--space-2);
 }
 

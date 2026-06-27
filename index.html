@@ -132,7 +132,7 @@
                 </tr>
                 <tr>
                   <td>--bg-surface</td>
-                  <td>#202027 / #dcdae9</td>
+                  <td>#202027 / #ebeaf7</td>
                   <td><div class="token-bg-surface"></div></td>
                   <td>Cards, panels, components</td>
                 </tr>
@@ -144,13 +144,13 @@
                 </tr>
                 <tr>
                   <td>--text-primary</td>
-                  <td>#dcdae9 / #202027</td>
+                  <td>#f1effd / #202027</td>
                   <td><div class="token-text-primary"></div></td>
                   <td>Headings, titles</td>
                 </tr>
                 <tr>
                   <td>--text-secondary</td>
-                  <td>#c8c6d8 / #49495a</td>
+                  <td>#dfddf1 / #b9b9cf</td>
                   <td><div class="token-text-secondary"></div></td>
                   <td>Descriptions, paragraphs</td>
                 </tr>
@@ -171,33 +171,33 @@
 
         <div class="section-body">
             <div class="typography-cards">
-                <div class="typography-card" style="grid-column: 1 / -1;">
+                <div class="card typography-card" style="grid-column: 1 / -1;">
                     <span class="badge badge-accent">display</span>
                     <span class="typography-properties">Syne 800 · 48px · -0.03em</span>
                     <span class="typography-example display">Hello, World</span>
                 </div>
-                <div class="typography-card">
+                <div class="card typography-card">
                     <span class="badge badge-accent">h1</span>
                     <span class="typography-properties">Syne 700 · 36px</span>
                     <span class="typography-example h1">Section Title</span>
                 </div>
-                <div class="typography-card">
+                <div class="card typography-card">
                     <span class="badge badge-accent">h2</span>
                     <span class="typography-properties">Syne 600 · 24px</span>
                     <span class="typography-example h2">Sub-heading</span>
                 </div>
-                <div class="typography-card">
+                <div class="card typography-card">
                     <span class="badge badge-accent">body</span>
                     <span class="typography-properties">JetBrains Mono 400 · 14px</span>
                     <span class="typography-example body">This is an example of text using typography intended for body of text</span>
                 </div>
-                <div class="typography-card">
+                <div class="card typography-card">
                     <span class="badge badge-accent">label</span>
                     <span class="typography-properties">JetBrains Mono 400 · 11px</span>
                     <span class="typography-example label">React · TypeScript · Node.js</span>
                     <!-- <span class="typography-example code">console.log("Hello, World!");</span> -->
                 </div>
-                <div class="typography-card" style="grid-column: 1 / -1;">
+                <div class="card typography-card" style="grid-column: 1 / -1;">
                     <span class="badge badge-accent">code</span>
                     <span class="typography-properties">Tokyo Night · Language JavaScript</span>
                     <div style="grid-column: 1 / -1;">
@@ -296,7 +296,7 @@ function toggleTheme() {
 
         <div class="section-body">
           <div class="components">
-            <div class="component-card component-btn">
+            <div class="card component-btn">
               <span class="label">buttons</span>
               <div class="btn-row">
                 <button class="btn btn-primary motion-up-hover motion-down-active easing-base">View Work</button>
@@ -310,7 +310,7 @@ function toggleTheme() {
                 <button class="btn btn-danger btn-sm">Delete</button>
               </div>
             </div>
-            <div class="component-card component-badge">
+            <div class="card component-badge">
               <span class="label">badges</span>
               <div class="badge-row">
                 <div class="badge badge-accent">JavaScript</div>
@@ -321,7 +321,7 @@ function toggleTheme() {
                 <div class="badge badge-danger">Deprecated</div>
               </div>
             </div>
-            <div class="component-card component-inputs">
+            <div class="card component-inputs">
               <span class="label">inputs</span>
               <div class="input-group">
                 <label for="email" class="label input-label">// email</label>
@@ -333,9 +333,9 @@ function toggleTheme() {
                 <span class="label input-error-msg">↑ must be at least 8 characters</span>
               </div>
             </div>
-            <div class="component-card component-projects">
+            <div class="card component-projects">
               <span class="label">project card</span>
-              <div class="project-card easing-base">
+              <div class="card project-card easing-base" style="background-color: var(--bg-elevated)">
                 <div class="proj-title">
                   <p class="proj-heading h2">Project DS</p>
                   <p class="proj-label label">Next.js · TypeScript</p>
@@ -458,24 +458,24 @@ function toggleTheme() {
 
         <div class="section-body section-motion-easing">
           <div class="motion-easing-row">
-            <div class="motion-item motion-up-hover easing-fast">
+            <div class="card motion-item motion-up-hover easing-fast">
               <p class="motion-label h2">fast - 150ms</p>
               <p class="motion-desc label">Hover, badge changes</p>
             </div>
-            <div class="motion-item motion-down-hover easing-base">
+            <div class="card motion-item motion-down-hover easing-base">
               <p class="motion-label h2">base - 250ms</p>
               <p class="motion-desc label">Button interactions</p>
             </div>
-            <div class="motion-item motion-up-hover easing-smooth">
+            <div class="card motion-item motion-up-hover easing-smooth">
               <p class="motion-label h2">smooth - 400ms</p>
               <p class="motion-desc label">Panel open/close</p>
             </div>
-            <div class="motion-item motion-down-hover easing-enter">
+            <div class="card motion-item motion-down-hover easing-enter">
               <p class="motion-label h2">enter - 600ms</p>
               <p class="motion-desc label">Page/section reveal</p>
             </div>
           </div>
-          <div class="motion-easing-tokens">
+          <div class="card motion-easing-tokens">
             <div class="motion-token-row">
               <div class="motion-token-item">
                 <span class="motion-token-name">.motion-up</span>
