@@ -43,7 +43,7 @@
     --red-100:   #e6caca;
     --red-500:   #f14848; /* Danger */
     --red-900:   #5a1d1d;
-    --aqua-100:  #cedde4;
+    --aqua-100:  #bceaff;
     --aqua-500:  #38bdf8; /* Info */
     --aqua-900:  #144f68;
 
@@ -127,7 +127,7 @@
     
     --accent-hover: var(--purple-800);
     --accent-dim: var(--purple-100);
-    
+
     --success-dim: var(--green-100);
     --warning-dim: var(--amber-100);
     --danger-dim: var(--red-100);
@@ -510,6 +510,7 @@ body {
 
 .btn-primary:hover, .btn-primary:focus {
     background-color: var(--accent-hover);
+    color: var(--white) !important;
 }
 
 .btn-ghost {
