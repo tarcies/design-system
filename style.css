@@ -179,8 +179,6 @@ body {
 .header {
     display: grid;
     grid-auto-flow: column;
-    /* TODO: Improve later */
-    grid-template-columns: 6fr 1fr;
 }
 
 .header-title {}
@@ -211,13 +209,13 @@ body {
 
 .header-theme {
     align-self: center;
-    justify-self: center;
+    justify-self: end;
 }
 
 .theme-toggle {
     color: var(--text-secondary);
     background-color: var(--bg-surface);
-    border: 2px solid var(--border);
+    border: 2px solid var(--border) !important;
 }
 
 .theme-toggle:hover {
