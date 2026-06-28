@@ -1,5 +1,5 @@
 <!doctype html>
-<html style="color-scheme: dark;">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="header-theme">
-          <button class="btn theme-toggle" onclick="toggleTheme()">
+          <button class="btn theme-toggle" id="themeToggleBtn">
             <div id="themeToggleIcon">
               <i data-lucide="sun"></i>
             </div>
@@ -203,6 +203,7 @@
                     <div style="grid-column: 1 / -1;">
                       <span class="code-file-name">script.js</span>
                       <pre>
+                        <!-- TODO: Add better JS example -->
                         <code class="code language-javascript">
 const root = document.documentElement;
 let isDark = true;
@@ -321,6 +322,7 @@ function toggleTheme() {
                 <div class="badge badge-danger">Deprecated</div>
               </div>
             </div>
+            <!-- TODO: Autofill messes up colours -->
             <div class="card component-inputs">
               <span class="label">inputs</span>
               <div class="input-group">
@@ -368,7 +370,7 @@ function toggleTheme() {
               <span class="label">border radius</span>
               <div class="radius-row">
                 <div class="radius-item">
-                  <div class="radius-box" style="border-radius: none"></div>
+                  <div class="radius-box" style="border-radius: 0"></div>
                   <p class="radius-label label">
                     none
                     <br>

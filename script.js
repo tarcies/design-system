@@ -4,6 +4,8 @@ let isDark = true;
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
+document.getElementById('themeToggleBtn').addEventListener(toggleTheme);
+
 function toggleTheme() {
     isDark = !isDark;
 
@@ -16,7 +18,7 @@ function toggleTheme() {
 // Removes and loads the icon for the theme toggle button
 function toggleThemeIcon() {
     const toggleIcon = document.getElementById('themeToggleIcon');
-    toggleIcon.innerHTML = null;
+    toggleIcon.textContent = '';
 
     const newIcon = document.createElement('i');
     newIcon.setAttribute('data-lucide', (isDark ? "sun" : "moon"))
@@ -36,6 +38,9 @@ function toggleCodeTheme() {
 }
 
 // TODO: Adjust swatch label color to contrast with background
+
+
+// TODO: Copy color from swatches on click
 
 
 
