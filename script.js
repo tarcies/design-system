@@ -4,7 +4,7 @@ let isDark = true;
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
-document.getElementById('themeToggleBtn').addEventListener(toggleTheme);
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
 
 function toggleTheme() {
     isDark = !isDark;
