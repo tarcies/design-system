@@ -33,7 +33,6 @@ function toggleThemeIcon() {
         toggleIcon.style.transform = 'scale(1)';
     }, 150);
     
-
     document.querySelectorAll('code').forEach (element => {
         element.style.backgroundColor = isDark ? '' : 'var(--bg-base)';
     });
