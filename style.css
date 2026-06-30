@@ -218,6 +218,10 @@ body {
     border: 2px solid var(--border);
 }
 
+#themeToggleIcon {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
 .theme-toggle:hover {
     background-color: var(--bg-subtle);
     border: 2px solid var(--border-hover);

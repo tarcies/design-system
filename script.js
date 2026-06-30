@@ -18,14 +18,21 @@ function toggleTheme() {
 // Removes and loads the icon for the theme toggle button
 function toggleThemeIcon() {
     const toggleIcon = document.getElementById('themeToggleIcon');
-    toggleIcon.textContent = '';
 
-    const newIcon = document.createElement('i');
-    newIcon.setAttribute('data-lucide', (isDark ? "sun" : "moon"))
+    toggleIcon.style.transform = 'scale(0.7)';
+    toggleIcon.style.opacity = '0';
 
+    setTimeout(() => {
+        toggleIcon.innerHTML = '';
+        const newIcon = document.createElement('i');
+        newIcon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+        toggleIcon.appendChild(newIcon);
+        lucide.createIcons();
 
-    toggleIcon.appendChild(newIcon);
-    lucide.createIcons();
+        toggleIcon.style.opacity = '1';
+        toggleIcon.style.transform = 'scale(1)';
+    }, 150);
+    
 
     document.querySelectorAll('code').forEach (element => {
         element.style.backgroundColor = isDark ? '' : 'var(--bg-base)';
