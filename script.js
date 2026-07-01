@@ -60,6 +60,62 @@ function swatchContrastGenerator() {
     });
 }
 
+function clickCopySwatches() {
+    paletteSwatches.forEach(function(swatch) {
+        swatch.addEventListener('click', () => setClipboard(window.getComputedStyle(swatch).backgroundColor))
+    });
+}
+
+async function setClipboard(text) {
+    const type = 'text/plain';
+    const clipboardItemData = {
+        [type]: text,
+    };
+    const clipboardItem = new ClipboardItem(clipboardItemData);
+    await navigator.clipboard.write([clipboardItem])
+    notify('success', 'Copied');
+}
+
+async function notify(status, text) {
+    const notifyTab = document.createElement('div');
+    notifyTab.classList.add('card', 'h2', 'notification', 'easing-fast');
+
+    switch (status) {
+        case 'success':
+            notifyTab.style.color = 'var(--success)';
+            break;
+        case 'warn':
+        case 'warning':
+            notifyTab.style.color = 'var(--warning)';
+            break;
+        case 'error':
+        case 'danger':
+            notifyTab.style.color = 'var(--danger)';
+            break;
+        case 'info':
+        case 'information':
+            notifyTab.style.color = 'var(--info)';
+            break;
+        default:
+            console.error(`Unknown status: ${status}`);
+            break;
+    }
+
+    // TODO: Add status icon to the left of the text
+
+    notifyTab.append(text);
+    document.body.append(notifyTab);
+
+    notifyTab.style.transform = 'translate(-50%, -100%)';
+    await sleep(150);
+    notifyTab.style.transform = 'translate(-50%, 50%)';
+    await sleep(2000);
+    notifyTab.style.transform = 'translate(-50%, -100%)';
+    await sleep(150);
+    notifyTab.remove();
+}
+
 swatchContrastGenerator();
+clickCopySwatches();
 
 document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
