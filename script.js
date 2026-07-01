@@ -1,6 +1,16 @@
 const root = document.documentElement;
 let isDark = true;
 
+const STATUS_COLOURS = {
+    success: '--success',
+    warn: '--warning',
+    warning: '--warning',
+    error: '--danger',
+    danger: '--danger',
+    info: '--info',
+    information: '--info',
+};
+
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
@@ -61,58 +71,31 @@ function swatchContrastGenerator() {
 }
 
 function clickCopySwatches() {
-    paletteSwatches.forEach(function(swatch) {
-        swatch.addEventListener('click', () => setClipboard(window.getComputedStyle(swatch).backgroundColor))
+    document.querySelectorAll('.palette-swatches').forEach(container => {
+        container.addEventListener('click', (e) => {
+            const swatch = e.target.closest('.palette-swatch');
+            if (swatch) setClipboard(window.getComputedStyle(swatch).backgroundColor);
+        })
     });
 }
 
 async function setClipboard(text) {
-    const type = 'text/plain';
-    const clipboardItemData = {
-        [type]: text,
-    };
-    const clipboardItem = new ClipboardItem(clipboardItemData);
-    await navigator.clipboard.write([clipboardItem])
+    await navigator.clipboard.writeText(text)
     notify('success', 'Copied');
 }
 
 async function notify(status, text) {
+    const color = STATUS_COLOURS[status];
+    if (!color) { console.log(`Unknown status: ${status}`); return; }
+
     const notifyTab = document.createElement('div');
     notifyTab.classList.add('card', 'h2', 'notification', 'easing-fast');
-
-    switch (status) {
-        case 'success':
-            notifyTab.style.color = 'var(--success)';
-            break;
-        case 'warn':
-        case 'warning':
-            notifyTab.style.color = 'var(--warning)';
-            break;
-        case 'error':
-        case 'danger':
-            notifyTab.style.color = 'var(--danger)';
-            break;
-        case 'info':
-        case 'information':
-            notifyTab.style.color = 'var(--info)';
-            break;
-        default:
-            console.error(`Unknown status: ${status}`);
-            break;
-    }
-
+    notifyTab.style.color = `var(${color})`;
+    notifyTab.textContent = text;
     // TODO: Add status icon to the left of the text
-
-    notifyTab.append(text);
+    notifyTab.addEventListener('animationend', () => notifyTab.remove(), { once: true });
+    
     document.body.append(notifyTab);
-
-    notifyTab.style.transform = 'translate(-50%, -100%)';
-    await sleep(150);
-    notifyTab.style.transform = 'translate(-50%, 50%)';
-    await sleep(2000);
-    notifyTab.style.transform = 'translate(-50%, -100%)';
-    await sleep(150);
-    notifyTab.remove();
 }
 
 swatchContrastGenerator();

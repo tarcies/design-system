@@ -261,6 +261,11 @@ body {
 
 .palette-row {}
 
+.palette-label {
+    color: var(--text-secondary);
+    margin: var(--space-1);
+}
+
 .palette-swatches {
     display: flex;
     width: 100%;
@@ -855,12 +860,21 @@ body {
     color: var(--text-muted);
 }
 
+@keyframes notifyAnimation {
+  0%   {transform: translate(-50%, -100%);}
+  10%  {transform: translate(-50%, 50%);}
+  90%  {transform: translate(-50%, 50%);}
+  100% {transform: translate(-50%, -100%);}
+}
+
 .notification {
     position: fixed;
     top: 0;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -100%);
+    animation-name: notifyAnimation;
+    animation-duration: 3s;
 
     display: flex;
     min-width: 20%;
