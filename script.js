@@ -4,7 +4,9 @@ let isDark = true;
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
-document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
+const paletteSwatches = [...document.getElementsByClassName('palette-swatch')];
+
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function toggleTheme() {
     isDark = !isDark;
@@ -13,6 +15,7 @@ function toggleTheme() {
 
     toggleThemeIcon();
     toggleCodeTheme();
+    swatchContrastGenerator();
 }
 
 // Removes and loads the icon for the theme toggle button
@@ -43,53 +46,20 @@ function toggleCodeTheme() {
     document.getElementById('codeTheme').href = isDark ? darkTheme : lightTheme;
 }
 
-// TODO: Adjust swatch label color to contrast with background
+// Adjust swatch label color to contrast with background
+function swatchContrastGenerator() {
+    paletteSwatches.forEach(function(swatch) {
+        const rgbString = window.getComputedStyle(swatch).backgroundColor;
 
+        const [r, g, b] = rgbString.slice(4, -1).split(', ');
 
-// TODO: Copy color from swatches on click
+        // https://www.w3.org/TR/AERT/#color-contrast
+        colorDiff = ((r * 299) + (g * 587) + (b * 114)) / 1000
 
+        swatch.style.color = colorDiff > 125 ? 'black' : 'white';
+    });
+}
 
+swatchContrastGenerator();
 
-// const swatches = [
-//     document.getElementById('background-swatches'), 
-//     document.getElementById('accent-swatches'), 
-//     document.getElementById('semantic-swatches')
-// ]
-
-// const backgroundTokenArr = ['--bg-base', '--bg-surface', '--bg-elevated', '--bg-subtle'];
-// const accentTokenArr = [
-//     '--purple-900', '--purple-800', '--purple-600', '--purple-500', 
-//     '--purple-400', '--purple-300', '--purple-100'
-// ];
-// const semanticTokenArr = ['--success', '--warning', '--error', '--info'];
-
-// const tokenArrs = [backgroundTokenArr, accentTokenArr, semanticTokenArr];
-// const rootStyles = window.getComputedStyle(root);
-
-// swatches.forEach((swatchRow, rowID) => {
-//     if (!swatchRow) return;
-
-//     let loadedTokenArr = tokenArrs[rowID];
-
-//     loadedTokenArr.forEach((colorToken, tokenID) => {
-//         let swatch = document.createElement('div');
-//         swatch.className = 'palette-swatch';
-
-//         const colorValue = rootStyles.getPropertyValue(colorToken).trim();
-//         swatch.style.backgroundColor = colorValue;
-
-//         const nameValue = colorToken.replace(/^--(bg-|purple-)?/, '');
-
-//         let labelSpan = document.createElement('span');
-//         labelSpan.className = 'palette-swatch-label';
-//         labelSpan.textContent = nameValue;
-        
-//         // don't judge me ._.
-//         if(tokenID > 3 || rowID == 2) {
-//             labelSpan.style.color = 'var(--gray-800)';
-//         }
-        
-//         swatch.appendChild(labelSpan);
-//         swatchRow.appendChild(swatch);
-//     });
-// });
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);

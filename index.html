@@ -81,13 +81,13 @@
                 <span class="palette-swatch-label">500 - main</span>
               </div>
               <div class="palette-swatch" style="background-color: var(--purple-400)">
-                <span class="palette-swatch-label" style="color: var(--gray-800)">400</span>
+                <span class="palette-swatch-label">400</span>
               </div>
               <div class="palette-swatch" style="background-color: var(--purple-300)">
-                <span class="palette-swatch-label" style="color: var(--gray-800)">300</span>
+                <span class="palette-swatch-label">300</span>
               </div>
               <div class="palette-swatch" style="background-color: var(--purple-100)">
-                <span class="palette-swatch-label" style="color: var(--gray-800)">100</span>
+                <span class="palette-swatch-label">100</span>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
           <!-- Semantic -->
           <div class="palette-row">
             <div class="palette-label">// SEMANTIC</div>
-            <div class="palette-swatches" id="semantic-swatches" style="color: var(--gray-800)">
+            <div class="palette-swatches" id="semantic-swatches">
                 <div class="palette-swatch" style="background-color: var(--success)">
                     <span class="palette-swatch-label">success</span>
                 </div>
@@ -195,7 +195,6 @@
                     <span class="badge badge-accent">label</span>
                     <span class="typography-properties">JetBrains Mono 400 · 11px</span>
                     <span class="typography-example label">React · TypeScript · Node.js</span>
-                    <!-- <span class="typography-example code">console.log("Hello, World!");</span> -->
                 </div>
                 <div class="card typography-card" style="grid-column: 1 / -1;">
                     <span class="badge badge-accent">code</span>
@@ -203,18 +202,20 @@
                     <div style="grid-column: 1 / -1;">
                       <span class="code-file-name">script.js</span>
                       <pre>
-                        <!-- TODO: Add better JS example -->
                         <code class="code language-javascript">
 const root = document.documentElement;
 let isDark = true;
 
 function toggleTheme() {
     isDark = !isDark;
-    console.log(isDark);
 
     root.setAttribute('color-scheme', isDark ? '' : 'light');
-    document.getElementById('themeLabel').innerHTML = isDark ? 'O' : '|';
+
+    toggleThemeIcon();
+    toggleCodeTheme();
 }
+
+document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
                         </code>
                       </pre>
                     </div>
