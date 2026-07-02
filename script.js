@@ -1,7 +1,7 @@
 const root = document.documentElement;
 let isDark = true;
 
-const STATUS_COLOURS = {
+const STATUS_COLORS = {
     success: '--success',
     warn: '--warning',
     warning: '--warning',
@@ -11,10 +11,20 @@ const STATUS_COLOURS = {
     information: '--info',
 };
 
+const STATUS_ICONS = {
+    success: 'circle-check',
+    warn: 'circle-alert',
+    warning: 'circle-alert',
+    error: 'circle-x',
+    danger: 'circle-x',
+    info: 'circle-question-mark',
+    information: 'circle-question-mark',
+}
+
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
 
-const paletteSwatches = [...document.getElementsByClassName('palette-swatch')];
+const paletteSwatches = [...document.getElementsByClassName('palette-swatch'), ...document.getElementsByClassName('color-token-preview')];
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -58,6 +68,7 @@ function toggleCodeTheme() {
 
 // Adjust swatch label color to contrast with background
 function swatchContrastGenerator() {
+
     paletteSwatches.forEach(function(swatch) {
         const rgbString = window.getComputedStyle(swatch).backgroundColor;
 
@@ -71,11 +82,11 @@ function swatchContrastGenerator() {
 }
 
 function clickCopySwatches() {
-    document.querySelectorAll('.palette-swatches').forEach(container => {
-        container.addEventListener('click', (e) => {
-            const swatch = e.target.closest('.palette-swatch');
-            if (swatch) setClipboard(window.getComputedStyle(swatch).backgroundColor);
-        })
+    paletteSwatches.forEach(swatch => {
+        swatch.addEventListener('click', (e) => {
+            const target = e.target.closest('.palette-swatch, .color-token-preview');
+            if (target) setClipboard(window.getComputedStyle(target).backgroundColor);
+        }); 
     });
 }
 
@@ -85,17 +96,25 @@ async function setClipboard(text) {
 }
 
 async function notify(status, text) {
-    const color = STATUS_COLOURS[status];
-    if (!color) { console.log(`Unknown status: ${status}`); return; }
+    const icon = STATUS_ICONS[status];
+    const color = STATUS_COLORS[status];
+    if (!icon || !color) { console.log(`Unknown status: ${status}`); return; }
 
     const notifyTab = document.createElement('div');
-    notifyTab.classList.add('card', 'h2', 'notification', 'easing-fast');
+    notifyTab.classList.add('notification', 'card', 'h2');
     notifyTab.style.color = `var(${color})`;
-    notifyTab.textContent = text;
-    // TODO: Add status icon to the left of the text
+
+    
+    const newIcon = document.createElement('i');
+    newIcon.setAttribute('data-lucide', icon);
+    notifyTab.append(newIcon);
+    notifyTab.append(text);
+
+
     notifyTab.addEventListener('animationend', () => notifyTab.remove(), { once: true });
     
     document.body.append(notifyTab);
+    lucide.createIcons();
 }
 
 swatchContrastGenerator();
