@@ -103,13 +103,11 @@ async function notify(status, text) {
     const notifyTab = document.createElement('div');
     notifyTab.classList.add('notification', 'card', 'h2');
     notifyTab.style.color = `var(${color})`;
-
     
     const newIcon = document.createElement('i');
     newIcon.setAttribute('data-lucide', icon);
     notifyTab.append(newIcon);
     notifyTab.append(text);
-
 
     notifyTab.addEventListener('animationend', () => notifyTab.remove(), { once: true });
     
