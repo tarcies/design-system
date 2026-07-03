@@ -19,7 +19,7 @@ const STATUS_ICONS = {
     danger: 'circle-x',
     info: 'circle-question-mark',
     information: 'circle-question-mark',
-}
+};
 
 const darkTheme = 'highlight/styles/tokyo-night-dark.css';
 const lightTheme = 'highlight/styles/tokyo-night-light.css';
@@ -75,7 +75,7 @@ function swatchContrastGenerator() {
         const [r, g, b] = rgbString.slice(4, -1).split(', ');
 
         // https://www.w3.org/TR/AERT/#color-contrast
-        colorDiff = ((r * 299) + (g * 587) + (b * 114)) / 1000
+        colorDiff = ((r * 299) + (g * 587) + (b * 114)) / 1000;
 
         swatch.style.color = colorDiff > 125 ? 'black' : 'white';
     });
@@ -91,7 +91,7 @@ function clickCopySwatches() {
 }
 
 async function setClipboard(text) {
-    await navigator.clipboard.writeText(text)
+    await navigator.clipboard.writeText(text);
     notify('success', 'Copied');
 }
 

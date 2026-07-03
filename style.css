@@ -86,6 +86,7 @@
     --accent: var(--purple-500);
     --accent-glow: var(--purple-300);
     --accent-hover: var(--purple-300);
+    --accent-active: var(--purple-700);
     --accent-dim: rgb(from var(--purple-500) r g b / 0.2);
 
     --success: var(--green-500);
@@ -125,7 +126,6 @@
     --border: rgb(from var(--black) r g b / 0.08);
     --border-hover: rgb(from var(--black) r g b / 0.16);
     
-    /* --accent: var(--purple-700); */
     --accent-hover: var(--purple-800);
     --accent-dim: var(--purple-100);
 
@@ -142,6 +142,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+a:link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+a:visited {
+    color: var(--accent-dim);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+a:active {
+    color: var(--accent-active)
 }
 
 body {
@@ -726,7 +744,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
-    padding: var(--space-4) 0;
+    padding: var(--space-2) 0;
 }
 
 .radius-row, .elev-row {
@@ -850,11 +868,11 @@ body {
 }
 
 .easing-smooth {
-    transition: 0.4s ease-out;
+    transition: 0.6s cubic-bezier(0.16, 1, 0.7, 1);
 }
 
-.easing-enter {
-    transition: 0.6s cubic-bezier(0.16, 1, 0.7, 1);
+.easing-bounce {
+    transition: 0.3s cubic-bezier(0.6,-1, 0.4, 2);
 }
 
 .motion-easing-tokens {

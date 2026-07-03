@@ -470,12 +470,12 @@ document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme)
               <p class="motion-desc label">Button interactions</p>
             </div>
             <div class="card motion-item motion-up-hover easing-smooth">
-              <p class="motion-label h2">smooth - 400ms</p>
+              <p class="motion-label h2">smooth - 600ms</p>
               <p class="motion-desc label">Panel open/close</p>
             </div>
-            <div class="card motion-item motion-down-hover easing-enter">
-              <p class="motion-label h2">enter - 600ms</p>
-              <p class="motion-desc label">Page/section reveal</p>
+            <div class="card motion-item motion-up-hover easing-bounce">
+              <p class="motion-label h2">bounce - 300ms</p>
+              <p class="motion-desc label">Notifications</p>
             </div>
           </div>
           <div class="card motion-easing-tokens">
@@ -502,11 +502,11 @@ document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme)
             <div class="motion-token-row">
               <div class="motion-token-item">
                 <span class="motion-token-name">.easing-smooth</span>
-                <span class="motion-token-value">→ 0.4s ease-out</span>
+                <span class="motion-token-value">→ 0.6s cubic-bezier(0.16, 1, 0.7, 1)</span>
               </div>
               <div class="motion-token-item">
-                <span class="motion-token-name">.easing-enter</span>
-                <span class="motion-token-value">→ 0.6s cubic-bezier(0.16, 1, 0.7, 1)</span>
+                <span class="motion-token-name">.easing-bounce</span>
+                <span class="motion-token-value">→ 0.3s cubic-bezier(0.6,-1, 0.4, 2)</span>
               </div>
             </div>
           </div>
@@ -517,11 +517,11 @@ document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme)
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js" defer></script>
+
     <script>
       lucide.createIcons();
+      hljs.highlightAll();
     </script>
-
-    <script src="script.js" defer></script>
-    <script>hljs.highlightAll();</script>
   </body>
 </html>
