@@ -902,3 +902,28 @@ body {
 .motion-token-value {
     color: var(--text-muted);
 }
+
+/* ------- Iconography ------- */
+
+.iconography {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icons-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-8);
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.iconography p {
+    line-height: 1.2;
+    text-align: center;
+}
