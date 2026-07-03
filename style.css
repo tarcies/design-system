@@ -281,10 +281,8 @@ a:active {
     padding: 0;
 }
 
-.header-meta {}
-
-.header-meta span {
-    color: var(--text-secondary);
+.header-meta {
+    padding-top: var(--space-1);
 }
 
 .header-theme {
