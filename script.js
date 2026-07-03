@@ -21,8 +21,8 @@ const STATUS_ICONS = {
     information: 'circle-question-mark',
 };
 
-const darkTheme = 'highlight/styles/tokyo-night-dark.css';
-const lightTheme = 'highlight/styles/tokyo-night-light.css';
+const darkTheme = 'tokyo-night-dark.css';
+const lightTheme = 'tokyo-night-light.css';
 
 const paletteSwatches = [...document.getElementsByClassName('palette-swatch'), ...document.getElementsByClassName('color-token-preview')];
 
@@ -63,7 +63,10 @@ function toggleThemeIcon() {
 
 // Switch code block theme between dark/light
 function toggleCodeTheme() {
-    document.getElementById('codeTheme').href = isDark ? darkTheme : lightTheme;
+    let link = document.getElementById('codeTheme').href;
+    link = link.replace(!isDark ? darkTheme : lightTheme, isDark ? darkTheme : lightTheme);
+    
+    document.getElementById('codeTheme').href = link;
 }
 
 // Adjust swatch label color to contrast with background
@@ -71,7 +74,6 @@ function swatchContrastGenerator() {
 
     paletteSwatches.forEach(function(swatch) {
         const rgbString = window.getComputedStyle(swatch).backgroundColor;
-
         const [r, g, b] = rgbString.slice(4, -1).split(', ');
 
         // https://www.w3.org/TR/AERT/#color-contrast
