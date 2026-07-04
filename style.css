@@ -146,6 +146,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
 }
 
 body {
@@ -156,7 +157,6 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     padding: 0;
-    padding-top: 4rem;
 }
 
 a:link {
@@ -174,7 +174,7 @@ a:hover {
 }
 
 a:active {
-    color: var(--accent-active)
+    color: var(--accent-active);
 }
 
 .page {
@@ -199,8 +199,8 @@ a:active {
 
 @keyframes notifyAnimation {
   0%   {transform: translate(-50%, -100%);}
-  10%  {transform: translate(-50%, 120%);}
-  90%  {transform: translate(-50%, 120%);}
+  10%  {transform: translate(-50%, 50%);}
+  90%  {transform: translate(-50%, 50%);}
   100% {transform: translate(-50%, -100%);}
 }
 
@@ -232,35 +232,40 @@ a:active {
 
 .navigation {
     position: fixed;
-    left: 0;
-    top: 0;
+    right: var(--space-4);
+    top: 10%;
     z-index: 1;
-    width: 100%;
-    height: 4rem;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg-surface);
-    border-bottom: 4px solid var(--border);
     opacity: 0.7;
 }
 
 .navigation ul {
-    width: 100%;
     list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 var(--space-4);
 }
 
 .navigation li {
-    flex-grow: 1;
-    text-align: center;
+    text-align: right;
+    border-right: 4px solid var(--accent);
 }
 
 .navigation a {
-    padding: var(--space-4) var(--space-6);
+    display: block;
+    line-height: 2;
+    padding-right: var(--space-6);
     font-size: 18px;
+    width: 100%;
+}
+
+.navigation li:hover {
+    border-color: var(--accent-hover);
+}
+
+.navigation a:hover {
+    color: var(--accent-hover);
+}
+
+#active {
+    color: var(--text-primary) !important;
+    border-color: var(--text-primary) !important;
 }
 
 .system-label {
@@ -313,7 +318,6 @@ a:active {
 
 .section {
     margin-top: var(--gap-section);
-    scroll-margin-top: 6rem;
 }
 
 .section-header {
@@ -740,7 +744,7 @@ a:active {
     margin-bottom: var(--space-2);
 }
 
-/* reference common class or create a unique one? */
+/* TODO: reference common class or create a unique one? */
 .proj-status {
     grid-area: 1 / 2 / 2 / span 1;
     justify-self: end;
@@ -961,4 +965,13 @@ a:active {
 .iconography p {
     line-height: 1.2;
     text-align: center;
+}
+
+
+/* ------- Footer ------- */
+
+footer {
+    border-top: 4px solid var(--border);
+    width: 100%;
+    height: 8rem;
 }
