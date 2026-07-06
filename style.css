@@ -223,6 +223,18 @@ a:active {
     animation: notifyAnimation 3s cubic-bezier(0.6,-1, 0.4, 2);
 }
 
+/* Change input form properties when auto-filling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-elevated) inset !important;
+    box-shadow: 0 0 0px 1000px var(--bg-elevated) inset !important;
+    
+    -webkit-text-fill-color: var(--text-secondary) !important;
+}
+
+
 /* ------- Header ------- */
 
 .header {
@@ -709,6 +721,7 @@ a:active {
     background-color: var(--bg-surface);
     border: 2px solid var(--border);
     border-radius: var(--radius-sm);
+    outline: none;
 }
 
 .input:hover {
@@ -717,6 +730,7 @@ a:active {
 
 .input:focus {
     outline: 2px solid var(--accent);
+    transition: 0.2s ease;
 }
 
 .input-error, .input-error:hover, .input-error:focus {
@@ -744,7 +758,6 @@ a:active {
     margin-bottom: var(--space-2);
 }
 
-/* TODO: reference common class or create a unique one? */
 .proj-status {
     grid-area: 1 / 2 / 2 / span 1;
     justify-self: end;
