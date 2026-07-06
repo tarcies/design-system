@@ -1,6 +1,7 @@
 :root {
     color-scheme: dark;
 
+    
     /* ------- Primitive Tokens ------- */
 
     --font-display: 'Syne', sans-serif;
@@ -68,6 +69,7 @@
     --radius-12: 12px;
     --radius-16: 16px;
     --radius-9999: 9999px;
+
 
     /* ------- Semantic Tokens ------- */
 
@@ -323,8 +325,6 @@ input:-webkit-autofill:active {
     border: 2px solid var(--border);
 }
 
-.theme-toggle span {}
-
 
 /* ------- Sections ------- */
 
@@ -353,8 +353,6 @@ input:-webkit-autofill:active {
 
 
 /* ------- Colour Palette ------- */
-
-.palette-row {}
 
 .palette-label {
     color: var(--text-secondary);
@@ -453,19 +451,6 @@ input:-webkit-autofill:active {
     grid-template: auto 2fr / auto 3fr;
     row-gap: var(--space-4);
 }
-
-.typography-card span {}
-
-/* .typography-label {
-    justify-self: start;
-    align-self: baseline;
-    background-color: var(--accent-dim);
-    padding: 1px var(--space-3);
-    border-radius: var(--radius-md);
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 800;
-} */
 
 .typography-properties {
     justify-self: end;
@@ -955,6 +940,7 @@ input:-webkit-autofill:active {
     color: var(--text-muted);
 }
 
+
 /* ------- Iconography ------- */
 
 .iconography {
@@ -993,7 +979,6 @@ footer {
 .footer {
     display: flex;
     justify-content: space-between;
-    /* margin: 0 var(--space-4); */
 }
 
 .footer-logo, .footer-copyright, .footer-links {
