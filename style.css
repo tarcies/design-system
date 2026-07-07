@@ -979,13 +979,11 @@ footer {
 .footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.footer-logo, .footer-copyright, .footer-links {
-    flex-shrink: 1;
-    flex-grow: 1;
-    text-align: start;
-    align-content: center;
+.footer-logo p {
+    font-size: 28px;
 }
 
 .footer-logo span {
@@ -994,10 +992,13 @@ footer {
 
 .footer-copyright {
     text-align: center;
+    color: var(--text-secondary);
+    font-size: 11px;
 }
 
 .footer-links {
     text-align: end;
+    font-size: 14px;
 }
 
 .footer-links a {
