@@ -31,18 +31,21 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.navigation a');
 
+function setActiveLink(activeId) {
+    navLinks.forEach((link) => {
+        link.classList.remove('active');
+        link.classList.toggle(
+            'active',
+            link.getAttribute('href').slice(1) === activeId
+        );
+    });
+}
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             const activeId = entry.target.getAttribute('id');
-
-            navLinks.forEach((link) => {
-                link.classList.remove('active');
-                link.classList.toggle(
-                    'active',
-                    link.getAttribute('href').slice(1) === activeId
-                );
-            });
+            setActiveLink(activeId);
         }
     });
 }, {
@@ -52,6 +55,35 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 sections.forEach((section) => observer.observe(section));
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+});
+
+// place this right before </body>, or reuse your footer's closing edge
+const bottomSentinel = document.createElement('div');
+bottomSentinel.style.height = '1px';
+document.body.appendChild(bottomSentinel);
+
+const lastLink = navLinks[navLinks.length - 1];
+
+const bottomObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    setActiveLink(lastLink.getAttribute('href').slice(1));
+  }
+}, {
+  root: null,
+  threshold: 0
+});
+
+bottomObserver.observe(bottomSentinel);
 
 // Toggles dark/light theme
 function toggleTheme() {

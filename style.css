@@ -147,8 +147,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 10vh;
+    /* scroll-behavior: smooth;
+    scroll-padding-top: 10vh; */
 }
 
 body {
