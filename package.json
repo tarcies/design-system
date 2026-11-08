@@ -2,20 +2,23 @@
   "name": "design-system",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [],
+  "homepage": "https://github.com/tarcies/design-system#readme",
+  "bugs": {
+    "url": "https://github.com/tarcies/design-system/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tarcies/design-system.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/tarcies/design-system/issues"
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/tarcies/design-system#readme"
+  "devDependencies": {
+    "mocha": "^11.7.6"
+  }
 }
