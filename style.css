@@ -160,14 +160,14 @@ body {
   padding: 0;
 }
 
-a:link {
-  color: var(--accent);
+a {
   text-decoration: none;
   transition: 0.2s ease;
 }
 
+a:link,
 a:visited {
-  color: var(--accent-dim);
+  color: var(--accent);
 }
 
 a:hover {
@@ -277,10 +277,6 @@ input:-webkit-autofill:active {
 
 .navigation li:hover {
   border-color: var(--accent-hover);
-}
-
-.navigation a:hover {
-  color: var(--accent-hover);
 }
 
 .active {
