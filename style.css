@@ -645,42 +645,36 @@ input:-webkit-autofill:active {
 .badge-accent {
   color: var(--accent);
   background-color: var(--accent-dim);
-  background-color: color-mix(in srgb, var(--accent-dim) 40%, transparent);
   border-color: var(--accent);
 }
 
 .badge-muted {
   color: var(--text-secondary);
   background-color: var(--bg-elevated);
-  background-color: color-mix(in srgb, var(--bg-elevated) 40%, transparent);
   border-color: var(--text-muted);
 }
 
 .badge-success {
   color: var(--success);
   background-color: var(--success-dim);
-  background-color: color-mix(in srgb, var(--success-dim) 40%, transparent);
   border-color: var(--success);
 }
 
 .badge-warn {
   color: var(--warning);
   background-color: var(--warning-dim);
-  background-color: color-mix(in srgb, var(--warning-dim) 40%, transparent);
   border-color: var(--warning);
 }
 
 .badge-danger {
   color: var(--danger);
   background-color: var(--danger-dim);
-  background-color: color-mix(in srgb, var(--danger-dim) 40%, transparent);
   border-color: var(--danger);
 }
 
 .badge-info {
   color: var(--info);
   background-color: var(--info-dim);
-  background-color: color-mix(in srgb, var(--info-dim) 40%, transparent);
   border-color: var(--info);
 }
 
