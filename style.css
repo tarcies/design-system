@@ -80,23 +80,24 @@
   --text-secondary: var(--gray-300);
   --text-muted: var(--gray-400);
 
-  --border: rgb(from var(--white) r g b / 0.08);
-  --border-hover: rgb(from var(--white) r g b / 0.16);
+  --border: color-mix(in srgb, var(--white) 8%, transparent);
+  --border-hover: color-mix(in srgb, var(--white) 16%, transparent);
 
   --accent: var(--purple-500);
   --accent-glow: var(--purple-300);
   --accent-hover: var(--purple-300);
   --accent-active: var(--purple-700);
-  --accent-dim: rgb(from var(--purple-500) r g b / 0.2);
+  --accent-dim: color-mix(in srgb, var(--purple-500) 20%, transparent);
 
   --success: var(--green-500);
-  --success-dim: var(--green-900);
   --warning: var(--amber-500);
-  --warning-dim: var(--amber-900);
   --danger: var(--red-500);
-  --danger-dim: var(--red-900);
   --info: var(--aqua-500);
-  --info-dim: var(--aqua-900);
+
+  --success-dim: color-mix(in srgb, var(--green-900) 40%, transparent);
+  --warning-dim: color-mix(in srgb, var(--amber-900) 40%, transparent);
+  --danger-dim: color-mix(in srgb, var(--red-900) 40%, transparent);
+  --info-dim: color-mix(in srgb, var(--aqua-900) 40%, transparent);
 
   --gap-inline: var(--space-2);
   --gap-component: var(--space-4);
@@ -123,16 +124,16 @@
   --text-secondary: var(--gray-600);
   --text-muted: var(--gray-500);
 
-  --border: rgb(from var(--black) r g b / 0.08);
-  --border-hover: rgb(from var(--black) r g b / 0.16);
+  --border: color-mix(in srgb, var(--black) 8%, transparent);
+  --border-hover: color-mix(in srgb, var(--black) 16%, transparent);
 
   --accent-hover: var(--purple-800);
   --accent-dim: var(--purple-100);
 
-  --success-dim: var(--green-100);
-  --warning-dim: var(--amber-100);
-  --danger-dim: var(--red-100);
-  --info-dim: var(--aqua-100);
+  --success-dim: color-mix(in srgb, var(--green-100) 40%, transparent);
+  --warning-dim: color-mix(in srgb, var(--amber-100) 40%, transparent);
+  --danger-dim: color-mix(in srgb, var(--red-100) 40%, transparent);
+  --info-dim: color-mix(in srgb, var(--aqua-100) 40%, transparent);
 }
 
 /* ------- Root ------- */
@@ -291,16 +292,7 @@ input:-webkit-autofill:active {
   color: var(--accent);
 }
 
-.header-title h1 {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 42px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-
-.header-title h1 span {
+.header-title p span {
   color: var(--accent);
   padding: 0;
 }
@@ -653,36 +645,42 @@ input:-webkit-autofill:active {
 .badge-accent {
   color: var(--accent);
   background-color: var(--accent-dim);
+  background-color: color-mix(in srgb, var(--accent-dim) 40%, transparent);
   border-color: var(--accent);
 }
 
 .badge-muted {
   color: var(--text-secondary);
   background-color: var(--bg-elevated);
+  background-color: color-mix(in srgb, var(--bg-elevated) 40%, transparent);
   border-color: var(--text-muted);
 }
 
 .badge-success {
   color: var(--success);
   background-color: var(--success-dim);
+  background-color: color-mix(in srgb, var(--success-dim) 40%, transparent);
   border-color: var(--success);
 }
 
 .badge-warn {
   color: var(--warning);
   background-color: var(--warning-dim);
+  background-color: color-mix(in srgb, var(--warning-dim) 40%, transparent);
   border-color: var(--warning);
 }
 
 .badge-danger {
   color: var(--danger);
   background-color: var(--danger-dim);
+  background-color: color-mix(in srgb, var(--danger-dim) 40%, transparent);
   border-color: var(--danger);
 }
 
 .badge-info {
   color: var(--info);
   background-color: var(--info-dim);
+  background-color: color-mix(in srgb, var(--info-dim) 40%, transparent);
   border-color: var(--info);
 }
 
